@@ -36,10 +36,6 @@ public class D3_CalculatorA {
 	// 연산한 결과값을 메서드를 통해서 가져온다
 	public int getResult() {
 		return this.result;
-<<<<<<< HEAD
 	}
 
 }
-=======
-	}
->>>>>>> refs/remotes/origin/main
