@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class D1_LottoMain {
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
+
 
 //		D1_Lotto lotto=new D1_Lotto();
 
@@ -32,7 +32,6 @@ public class D1_LottoMain {
 //				Arrays.toString(lottoCompare.userBall.lottoObj[0].getLots()));
 	}
 
-=======
 //		D1_Lotto lotto=new D1_Lotto();
 //		
 //		System.out.println(lotto.makeBall());
