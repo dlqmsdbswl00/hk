@@ -11,9 +11,10 @@
 <body>
 <div>
 	<h1>회원가입</h1>
-	<form action="userController.jsp" method="post" onsubmit="return val()">
+	<form action="userController.jsp" method="post" onsubmit="return isPW(this)">
 		<input type="hidden" name="command" value="adduser" />
 		<input type="text" name="id" placeholder="ID" required="required" />
+		<a href="#" onclick="idChk()">중복체크</a>
 		<input type="text" name="name" placeholder="이름" required="required" />
 		<input type="password" id="pass1" name="password" placeholder="PASSWORD" required="required" />
 		<input type="password" id="pass2" name="password2" placeholder="PASSWORD확인" required="required" />
@@ -26,17 +27,34 @@
 </div>
 </body>
 <script type="text/javascript">
-	function val(){
-		var pass1 = document.getElementById("pass1").value;
-		var pass2 = document.getElementById("pass2").value;
+//아이디 중복체크
+	function idChk(){
+	var id=document.getElementsByName("id")[0].value;
+	if(id==""){
+		alert("아이디를 입력하세요");
+	}
+	else{
+// 		open
+		window.open("userController.jsp?command=idchk&id"+id,
+					"아이디 확인", "width=300px, height=300px");
+	}
+	
+}
+
+
+//회원가입 시 패스워드 확인하여 가입진행하는 기능 구현
+	function isPW(formEle){
+// 		var pass1 = document.getElementById("pass1").value;
+// 		var pass2 = document.getElementById("pass2").value;
 		
-		if (pass1!=pass2) {
-			alert("틀린 비밀번호 입니다?");
-			return false;
+		if (formEle.password.value!=formEle.password2.value) {
+			alert("비밀번호를 확인하세요");
+			formEle.password.value="";	//비밀번호초기화
+			formEle.password2.value="";
+			formEle.password.focus();	//비밀번호를 바로 입력할 수 있게 커서 유도
+			return false;				//false 반환해줘야 submit 취소 가능
 		}
-		else{
-			return true;
-		}
+		
 	}
 	
 </script>

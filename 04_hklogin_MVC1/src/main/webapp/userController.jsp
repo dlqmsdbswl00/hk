@@ -33,14 +33,22 @@
 				location.href="index.jsp";
 			</script>
 			<%
-		}else{
+		}
+		else{
 			%>
 			<script type="text/javascript">
-				alert("회원 가입 실패");
+				alert("회원 가입 실패"); 
 				location.href="userController.jsp?command=registform";
 			</script>
 			<%
 		}
+	}else if(command.equals("idchk")){
+		String id=request.getParameter("id");
+		String resultId=dao.idCheck(id);	//결과값이 null이면 사용가능
+		
+		request.setAttribute("resultId", resultId);
+		pageContext.forward("idChkform.jsp");	//사용자에게 id가 사용가능한지 알려줄 페이지
+		
 	}
 %>
 </body>
