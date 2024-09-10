@@ -1,20 +1,19 @@
 package com.hk.dtos;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
-public class UserDto implements Serializable {
-
-	// DTO 만들기 순서
-	// 멤버필드 작성
-	// default 순서
-	// 생성자 오버로딩: 생성자를 통해서 필드 초기화
-	// getter, setter 메서드 작성
-	// toString() 오버라이딩
-	// 편하게 작성하기 위해 지원하는 라이브러리 --> lombok 라이브러리
-
+//DTO 만들기 순서
+//-맴버필드 작성
+//-default생성자
+//-생성자 오버로딩:생성자를 통해서 필드 초기화
+//-getter, setter 메서드 작성
+//-toString() 오버라이딩
+// 편하게 작성하기 위해 지원하는 라이브러리--> lombok 라이브러리
+public class UserDto implements Serializable{
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private int seq;
 	private String id;
 	private String name;
@@ -24,6 +23,10 @@ public class UserDto implements Serializable {
 	private String enabled;
 	private String role;
 	private Date regDate;
+	
+	public UserDto() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public UserDto(int seq, String id, String name, String password, String address, String email, String enabled,
 			String role, Date regDate) {
@@ -38,8 +41,6 @@ public class UserDto implements Serializable {
 		this.role = role;
 		this.regDate = regDate;
 	}
-	
-	
 
 	public UserDto(String id, String name, String password, String address, String email) {
 		super();
@@ -49,8 +50,6 @@ public class UserDto implements Serializable {
 		this.address = address;
 		this.email = email;
 	}
-
-
 
 	public int getSeq() {
 		return seq;
@@ -134,5 +133,17 @@ public class UserDto implements Serializable {
 				+ address + ", email=" + email + ", enabled=" + enabled + ", role=" + role + ", regDate=" + regDate
 				+ "]";
 	}
-
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
