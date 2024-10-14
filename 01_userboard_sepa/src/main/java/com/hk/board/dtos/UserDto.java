@@ -4,7 +4,11 @@ import java.util.Date;
 
 //DTO객체: 데이터를 운반할때 사용할 객체
 public class UserDto {
-	//java 3대 개념: 은닉화, 상속, 다형성
+//	java 3대 개념: 은닉화, 상속, 다형성
+//	필드들은 모두 **은닉화(encapsulation)**되어 있어, 
+//	외부에서 직접 접근하지 못하게 하고, 
+//	getter와 setter를 통해서만 접근하도록 설정되어 있습니다.
+	
 	private String userID;
 	private String name;
 	private int birthYear;
@@ -14,11 +18,15 @@ public class UserDto {
 	private int height;
 	private Date mDate;
 	
+	
+//	기본생성자 : 매개변수가 없는 기본생성자
 	public UserDto() {
 
 	}
 
 	//생성자 오버로딩
+	// 모든 필드를 초기화 할 수 있게 매개변수를 받는다
+	// super(); = 상위클래스(Object)의 생성자를 호출
 	public UserDto(String userID, String name, int birthYear, String addr, String mobile1, String mobile2, int height,
 			Date mDate) {
 		super();
@@ -43,6 +51,9 @@ public class UserDto {
 		this.height = height;
 	}
 
+	// Getter/Setter 메서드
+	// 데이터를 가져오기 위한 Getter
+	// 데이터를 설정하기 위한 Setter
 	public String getUserID() {
 		return userID;
 	}
@@ -107,6 +118,7 @@ public class UserDto {
 		this.mDate = mDate;
 	}
 
+	//toString() 메서드 : 객체의 상태를 문자로 반환
 	//toString()---> Object 클래스에 구현되어 있음
 	@Override
 	public String toString() {
