@@ -14,6 +14,7 @@ import com.hk.board.service.HkServiceImp;
 @SpringBootTest
 class ApplicationTests {
 	
+	
 	@Autowired
 	HkServiceImp hkServiceImp;
 	
@@ -21,7 +22,11 @@ class ApplicationTests {
 	void contextLoads() {
 		List<HkDto> list= hkServiceImp.getAllList();
 		System.out.println(list.size());
-		
 	}
-
+	@Test
+	void insertboard() {
+		boolean s=hkServiceImp.insertBoard(
+				new HkDto(0,"kk","ttt","dfsfsdf",null));
+		System.out.println(s);
+	}
 }
